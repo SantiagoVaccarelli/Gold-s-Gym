@@ -1,0 +1,55 @@
+footer {
+    height: 7vh;
+    color: nth($colors,1);
+    background-color: nth($colors,2);
+    padding: 0 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    p{
+        margin-bottom: 0;
+    }
+
+    .copyright {
+        display: flex;
+        align-items: center;
+
+        p {
+            padding: 15px;
+        }
+    }
+
+    .redes {
+        list-style: none;
+        display: flex;
+
+        li {
+            padding: 0 25px;
+            
+            + li{
+                border-left: nth($colors,1) solid 2px;
+            }
+
+            a {
+                color: nth($colors,1);
+                transition: color 0.4s;
+
+                &:hover {
+                    color: #fff;
+                }
+
+                .fab {
+                    font-size: 20px;
+                    transition: font-weight 0.2s;
+                    
+                    &:hover {
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+    }
+}
+
+

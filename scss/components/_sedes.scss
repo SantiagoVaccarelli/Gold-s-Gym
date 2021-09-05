@@ -1,0 +1,51 @@
+#sedes {
+    height: 100%;
+    padding-bottom: 50px;
+
+    .tituloSeccion {
+        color: nth($colors,2);
+    }
+
+    .sede2{
+        flex-direction: row-reverse;
+    }
+
+    .sede {
+        min-height: 50vh;
+        height: 100%;
+        margin: 8%;
+        background-color: nth($colors,2);
+        color: nth($colors,1);
+        transition: transform 100ms;
+        display: flex;       
+
+        @include mediaQuery(laptop){
+            align-items: center;
+            min-height: 100%;
+            flex-direction: column;
+        }
+
+        &:target{
+            transform: translateY(90px);
+        }
+
+        &>*{
+            width: 50%;
+            padding: 1.5rem;
+
+            @include mediaQuery(laptop){
+                width: 80%;
+            }
+        }
+
+        .tituloSede {
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+        }
+        
+        .textoSede {
+            text-align: justify;
+        }
+    }
+}
+

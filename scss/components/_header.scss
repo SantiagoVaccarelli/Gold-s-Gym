@@ -1,0 +1,115 @@
+header {
+	height: auto;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	background-color: nth($colors,1);
+	border-bottom: nth($colors,2) solid 2px;
+	z-index: 1;
+	display: flex;
+	justify-content: space-between;
+	padding: 0 45px;
+
+	.logoImg {
+		height: 5rem;
+		width: auto;
+		margin: 1vh;
+	}
+
+	.navPrincipal{
+		ul{
+			list-style: none;
+			position: relative;
+			margin-top: 1.2em;
+			display: flex;
+		}
+
+		a{
+			margin: 0 5px 5px;
+			padding-left: 25px;
+			text-decoration: none;
+			font-size: 1.8em;
+			font-family: $font-family;
+			font-weight: 650;
+			color: nth($colors,2);
+			padding: 5px;
+			position: relative;
+			transition: all 0.1ms 150ms;
+
+			@include mediaQuery(mobile){
+				font-size: 1.4rem;
+			}
+
+			&:hover{
+				font-weight: 900;
+				
+				&::after,
+				&::before{
+					transform: scale(1);
+					
+					@include mediaQuery(laptop){
+						display: none;
+					}
+				}
+
+				&::after{
+					transform-origin: left;
+				}
+
+				&::before{
+					transform-origin: right;
+				}
+			}
+
+			&::after{
+				@include pseudoElementAnimation("after");
+			}
+
+			&::before{
+				@include pseudoElementAnimation("before");
+			}
+		}
+
+		.sedes-links:hover .navSedes{
+			height: 25vh;
+			display: block;
+
+			@include mediaQuery(laptop){
+				display: none;
+			}
+		}		
+
+		.sedes-links {
+			position: relative;
+			display: flex;
+			justify-content: center;
+
+			.navSedes{
+				position: absolute;
+				background-color: nth($colors,2);
+				width: 500%;
+				right: 0;
+				top: 100%;
+				outline: 2px solid nth($colors,1);
+				display:none;
+
+				a{
+					color: nth($colors,1);
+				}
+
+				ul{
+					position: absolute;
+					width: 100%;
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					justify-content: space-between;
+					height: 20vh;
+				}
+
+			}
+		}
+	}
+}
+
+

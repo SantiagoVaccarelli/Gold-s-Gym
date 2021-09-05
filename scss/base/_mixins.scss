@@ -1,0 +1,32 @@
+@use "sass:map";
+
+@mixin mediaQuery($key) {
+
+    $breakpoint: map.get($breakpoints,$key);    
+
+    @media screen and (max-width: $breakpoint){
+        @content;
+    }
+}
+
+
+@mixin pseudoElementAnimation($element){
+    content: "";
+    position: absolute;
+    width: 90%;
+    height: 2px;
+    background-color: currentColor;
+    transform: scale(0);
+    transition: transform 250ms ease-in;
+
+    @if $element == "after" {
+        left: 0;
+        bottom: 0;
+        transform-origin: right;
+    }
+    @else if $element == "before" {
+        left: 10%;
+        top: 0;
+        transform-origin: left;
+    }
+}

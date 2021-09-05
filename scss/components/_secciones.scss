@@ -1,0 +1,19 @@
+.seccion {
+    height: 100%;
+    min-height: 100vh;
+    width: auto;
+    background-color: nth($colors,1);
+
+    .tituloSeccion {
+        color: nth($colors,1);
+        font-size: 5rem;
+        text-transform: uppercase;
+        padding-top: 8rem;
+        
+        @include mediaQuery(laptop){
+            padding-top: 10rem;
+        }
+    }
+}
+
+

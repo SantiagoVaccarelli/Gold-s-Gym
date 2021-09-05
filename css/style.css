@@ -1,0 +1,482 @@
+@import url("https://fonts.googleapis.com/css2?family=Tourney:ital,wght@1,200&display=swap");
+:root {
+  font-size: 16px;
+}
+@media screen and (max-width: 1200px) {
+  :root {
+    font-size: 12px;
+  }
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  text-align: center;
+  scroll-behavior: smooth;
+  background-color: #000;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #F6D33C;
+  border-radius: 10px;
+  border: #000 1px solid;
+}
+
+header {
+  height: auto;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  background-color: #F6D33C;
+  border-bottom: #000 solid 2px;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 45px;
+}
+header .logoImg {
+  height: 5rem;
+  width: auto;
+  margin: 1vh;
+}
+header .navPrincipal ul {
+  list-style: none;
+  position: relative;
+  margin-top: 1.2em;
+  display: flex;
+}
+header .navPrincipal a {
+  margin: 0 5px 5px;
+  padding-left: 25px;
+  text-decoration: none;
+  font-size: 1.8em;
+  font-family: "Tourney", cursive;
+  font-weight: 650;
+  color: #000;
+  padding: 5px;
+  position: relative;
+  transition: all 0.1ms 150ms;
+}
+@media screen and (max-width: 480px) {
+  header .navPrincipal a {
+    font-size: 1.4rem;
+  }
+}
+header .navPrincipal a:hover {
+  font-weight: 900;
+}
+header .navPrincipal a:hover::after, header .navPrincipal a:hover::before {
+  transform: scale(1);
+}
+@media screen and (max-width: 1200px) {
+  header .navPrincipal a:hover::after, header .navPrincipal a:hover::before {
+    display: none;
+  }
+}
+header .navPrincipal a:hover::after {
+  transform-origin: left;
+}
+header .navPrincipal a:hover::before {
+  transform-origin: right;
+}
+header .navPrincipal a::after {
+  content: "";
+  position: absolute;
+  width: 90%;
+  height: 2px;
+  background-color: currentColor;
+  transform: scale(0);
+  transition: transform 250ms ease-in;
+  left: 0;
+  bottom: 0;
+  transform-origin: right;
+}
+header .navPrincipal a::before {
+  content: "";
+  position: absolute;
+  width: 90%;
+  height: 2px;
+  background-color: currentColor;
+  transform: scale(0);
+  transition: transform 250ms ease-in;
+  left: 10%;
+  top: 0;
+  transform-origin: left;
+}
+header .navPrincipal .sedes-links:hover .navSedes {
+  height: 25vh;
+  display: block;
+}
+@media screen and (max-width: 1200px) {
+  header .navPrincipal .sedes-links:hover .navSedes {
+    display: none;
+  }
+}
+header .navPrincipal .sedes-links {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+header .navPrincipal .sedes-links .navSedes {
+  position: absolute;
+  background-color: #000;
+  width: 500%;
+  right: 0;
+  top: 100%;
+  outline: 2px solid #F6D33C;
+  display: none;
+}
+header .navPrincipal .sedes-links .navSedes a {
+  color: #F6D33C;
+}
+header .navPrincipal .sedes-links .navSedes ul {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 20vh;
+}
+
+.seccion {
+  height: 100%;
+  min-height: 100vh;
+  width: auto;
+  background-color: #F6D33C;
+}
+.seccion .tituloSeccion {
+  color: #F6D33C;
+  font-size: 5rem;
+  text-transform: uppercase;
+  padding-top: 8rem;
+}
+@media screen and (max-width: 1200px) {
+  .seccion .tituloSeccion {
+    padding-top: 10rem;
+  }
+}
+
+#inicio {
+  background-image: url(../img/fondo-img.jpg), radial-gradient(rgba(255, 255, 255, 0.5), white);
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-blend-mode: hard-light;
+}
+#inicio .goldsGym {
+  width: 85vw;
+  height: auto;
+}
+
+#nosotros {
+  min-height: 100vh;
+  height: 100%;
+  background-color: #F6D33C;
+  display: flex;
+  flex-direction: column;
+}
+#nosotros h1 {
+  color: #000;
+}
+#nosotros .contenidoNosotros {
+  display: flex;
+}
+@media screen and (max-width: 1200px) {
+  #nosotros .contenidoNosotros {
+    flex-direction: column;
+  }
+}
+#nosotros .contenidoNosotros .imagenNosotros {
+  margin: 5rem;
+}
+#nosotros .contenidoNosotros .textoNosotros {
+  font-size: 1.2rem;
+  text-align: justify;
+  margin: 5rem;
+  line-height: 1.5;
+}
+
+#galeria {
+  background-color: #000;
+  min-height: 100vh;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2.2rem;
+  padding: 3rem 6rem;
+}
+@media screen and (max-width: 1200px) {
+  #galeria {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 768px) {
+  #galeria {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+#galeria h2 {
+  grid-column: 1/-1;
+  padding-top: 4rem;
+}
+#galeria img {
+  height: 300px;
+  width: 100%;
+  transition: transform 250ms ease-in, box-shadow 250ms ease-in;
+  border: 2px solid #8f8e8e;
+}
+@media screen and (max-width: 480px) {
+  #galeria img {
+    height: 200px;
+  }
+}
+#galeria img:hover {
+  transform: translate(0.5rem, -0.5rem);
+  box-shadow: -0.5rem 0.5rem 0px #F6D33C;
+}
+
+#sedes {
+  height: 100%;
+  padding-bottom: 50px;
+}
+#sedes .tituloSeccion {
+  color: #000;
+}
+#sedes .sede2 {
+  flex-direction: row-reverse;
+}
+#sedes .sede {
+  min-height: 50vh;
+  height: 100%;
+  margin: 8%;
+  background-color: #000;
+  color: #F6D33C;
+  transition: transform 100ms;
+  display: flex;
+}
+@media screen and (max-width: 1200px) {
+  #sedes .sede {
+    align-items: center;
+    min-height: 100%;
+    flex-direction: column;
+  }
+}
+#sedes .sede:target {
+  transform: translateY(90px);
+}
+#sedes .sede > * {
+  width: 50%;
+  padding: 1.5rem;
+}
+@media screen and (max-width: 1200px) {
+  #sedes .sede > * {
+    width: 80%;
+  }
+}
+#sedes .sede .tituloSede {
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+}
+#sedes .sede .textoSede {
+  text-align: justify;
+}
+
+#asociate {
+  position: relative;
+  background-color: #000;
+  height: 93vh;
+}
+@media screen and (max-width: 1200px) {
+  #asociate {
+    padding-bottom: 3rem;
+    height: 100%;
+  }
+}
+#asociate .planes {
+  margin-top: 5rem;
+  padding: 0 18rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 4rem;
+  height: 50%;
+}
+@media screen and (max-width: 1200px) {
+  #asociate .planes {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 30rem);
+    padding: 0 10rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  #asociate .planes {
+    padding: 0 5rem;
+  }
+}
+#asociate .planes .plan {
+  background-color: #fff;
+  margin-bottom: 2rem;
+  box-shadow: 0 3px 2px #efefefef;
+  text-align: left;
+  transition: transform 300ms;
+  display: grid;
+  grid-template-rows: repeat(9, 1fr);
+  height: 60%;
+}
+@media screen and (max-width: 1200px) {
+  #asociate .planes .plan {
+    height: 100%;
+    width: 50%;
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width: 768px) {
+  #asociate .planes .plan {
+    width: 80%;
+  }
+}
+#asociate .planes .plan:hover {
+  transform: scale(1.1);
+}
+#asociate .planes .plan a:hover {
+  color: #000;
+}
+#asociate .planes .plan .planDescripcion {
+  background-color: #8f8e8e;
+  grid-row: 1/5;
+}
+#asociate .planes .plan .planDescripcion h4 {
+  font-size: 150%;
+  color: black;
+  margin: 1rem 0;
+  font-weight: 400;
+}
+#asociate .planes .plan .planDescripcion .planPrecio {
+  color: #F6D33C;
+  font-size: 300%;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+#asociate .planes .plan .planDescripcion .planPrecio span {
+  font-size: 30%;
+  font-weight: 500;
+}
+#asociate .planes .plan .planBeneficios {
+  grid-row: 5/9;
+}
+#asociate .planes .plan .planBeneficios ul {
+  list-style: none;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+#asociate .planes .plan .planBeneficios ul li {
+  color: #555;
+  padding: 5px 0;
+}
+#asociate .planes .plan .planBeneficios ul li .small-icon {
+  color: #F6D33C;
+  font-size: 120%;
+  margin-right: 10px;
+  width: 30px;
+  text-align: center;
+}
+#asociate .planes .plan div {
+  padding: 15px;
+  border-bottom: 1px solid #efefef;
+}
+#asociate .planes .plan div:last-child {
+  border: 0;
+  text-align: center;
+  padding-left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#asociate .planes .plan div .botonAsociate {
+  font-size: 1.2rem;
+  color: #000;
+  text-decoration: none;
+  padding: 0.8rem 1.2rem;
+  border-radius: 50px;
+  border: 3px solid #F6D33C;
+  background-color: white;
+}
+#asociate .planes .plan div .botonAsociate:hover {
+  background-color: #F6D33C;
+}
+#asociate::after {
+  content: " ";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  height: 2px;
+  width: 50%;
+  background-color: #F6D33C;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+footer {
+  height: 7vh;
+  color: #F6D33C;
+  background-color: #000;
+  padding: 0 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+footer p {
+  margin-bottom: 0;
+}
+footer .copyright {
+  display: flex;
+  align-items: center;
+}
+footer .copyright p {
+  padding: 15px;
+}
+footer .redes {
+  list-style: none;
+  display: flex;
+}
+footer .redes li {
+  padding: 0 25px;
+}
+footer .redes li + li {
+  border-left: #F6D33C solid 2px;
+}
+footer .redes li a {
+  color: #F6D33C;
+  transition: color 0.4s;
+}
+footer .redes li a:hover {
+  color: #fff;
+}
+footer .redes li a .fab {
+  font-size: 20px;
+  transition: font-weight 0.2s;
+}
+footer .redes li a .fab:hover {
+  font-weight: 500;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,35 @@
+#nosotros {
+    min-height: 100vh;
+    height: 100%;
+    background-color: nth($colors,1);
+    display: flex;
+    flex-direction: column;
+
+    h1 {
+        color: nth($colors,2);
+    }
+    
+    .contenidoNosotros {
+        display: flex;
+        
+        @include mediaQuery(laptop){
+            flex-direction: column;
+        }
+
+        .imagenNosotros {
+            margin: 5rem;
+        }
+    
+        .textoNosotros {
+            font-size: 1.2rem;
+            text-align: justify;
+            margin: 5rem;
+            line-height: 1.5;
+        }  
+    }
+}
+
+
+
+
+
