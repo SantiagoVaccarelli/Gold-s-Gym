@@ -7,6 +7,12 @@ footer {
     justify-content: space-between;
     align-items: center;
 
+    .textoFooter{
+        @include mediaQuery(mobile){
+            display: none;
+        }
+    }
+
     p{
         margin-bottom: 0;
     }
@@ -26,6 +32,10 @@ footer {
 
         li {
             padding: 0 25px;
+            
+            @include mediaQuery(mobile){
+                padding: 0 10px;
+            }
             
             + li{
                 border-left: nth($colors,1) solid 2px;

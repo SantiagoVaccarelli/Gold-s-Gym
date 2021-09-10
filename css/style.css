@@ -444,6 +444,11 @@ footer {
   justify-content: space-between;
   align-items: center;
 }
+@media screen and (max-width: 480px) {
+  footer .textoFooter {
+    display: none;
+  }
+}
 footer p {
   margin-bottom: 0;
 }
@@ -460,6 +465,11 @@ footer .redes {
 }
 footer .redes li {
   padding: 0 25px;
+}
+@media screen and (max-width: 480px) {
+  footer .redes li {
+    padding: 0 10px;
+  }
 }
 footer .redes li + li {
   border-left: #F6D33C solid 2px;
